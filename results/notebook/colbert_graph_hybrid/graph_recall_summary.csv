@@ -1,0 +1,13 @@
+entity_group,k,graph_recall
+multi-entity,1,0.008333333333333333
+multi-entity,5,0.07698412698412697
+multi-entity,10,0.10031746031746032
+multi-entity,20,0.11531746031746032
+single-entity,1,0.0
+single-entity,5,0.0
+single-entity,10,0.0
+single-entity,20,0.004
+overall,1,0.003125
+overall,5,0.028869047619047617
+overall,10,0.03761904761904762
+overall,20,0.04574404761904762
