@@ -1,0 +1,52 @@
+# Small config for early chunking ablation
+
+corpus:
+  target_size: 500
+  local_corpus_cache: "data/corpus_cache_quick.parquet"
+  seed: 10
+
+chunking:
+  strategy: "paragraph"
+  sentence_window_size: 3
+  sentence_window_stride: 2
+  adaptive_min_words: 80
+  adaptive_max_words: 180
+  adaptive_keyword_slack_words: 40
+  adaptive_keyword_min_overlap: 1
+  learned_boundary_hidden_dim: 32
+  learned_boundary_epochs: 12
+  learned_boundary_batch_size: 128
+  learned_boundary_learning_rate: 0.001
+  learned_boundary_split_threshold: 0.55
+  semantic_model: "BAAI/bge-small-en-v1.5"
+  semantic_similarity_threshold: 0.65
+  semantic_min_words: 60
+  semantic_max_words: 160
+  semantic_min_sentences: 2
+  semantic_max_sentences: 5
+
+queries:
+  sample_size_per_group: 50
+  seed: 10
+
+retrieval:
+  k_values: [1, 5, 10, 20]
+
+models:
+  biencoder: "BAAI/bge-small-en-v1.5"
+  colbert: "colbert-ir/colbertv2.0"
+
+colbert:
+  bsize: 8
+
+paths:
+  results_dir: "results"
+  faiss_index_dir: "results/faiss_index"
+  colbert_index_dir: "results/colbert_index"
+  json_log: "results/benchmark_log.json"
+  charts_dir: "results/charts"
+  csv_output: "results/summary_statistics.csv"
+
+spacy:
+  model: "en_core_web_sm"
+  entity_threshold: 2
